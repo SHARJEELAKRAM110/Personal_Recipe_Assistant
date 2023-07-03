@@ -4,14 +4,14 @@ import 'package:sqflite/sqflite.dart';
 
 import 'HomePage.dart';
 import 'favorite.dart';
-class RecipeCard extends StatefulWidget {
-  const RecipeCard({Key? key}) : super(key: key);
+class DinnerCard extends StatefulWidget {
+  const DinnerCard({Key? key}) : super(key: key);
 
   @override
-  State<RecipeCard> createState() => _RecipeCardState();
+  State<DinnerCard> createState() => _DinnerCardState();
 }
 
-class _RecipeCardState extends State<RecipeCard> {
+class _DinnerCardState extends State<DinnerCard> {
   addFavouritiese(String recipename,String numberofcalories,String recipeImage,) async {
 
     // get a reference to the database
@@ -34,25 +34,24 @@ class _RecipeCardState extends State<RecipeCard> {
 
 
   List<String> recipename = [
-    'Lassi',
-    'Anda Bhurji',
-    'Shakshuka',
-    'Aalo Pratha',
-    'Anda Pratha',
-    'Channa Puri',
-    'Nehari',
-    'Halwapuri'
+    'Daal Fry',
+    'Palak Paneer',
+    'Paneer Bhurji',
+    'Tandoori Fish',
+    'Chapli Kabab',
+    'Aaloo gosht',
+    'Beef Biryani',
+
   ];
-  List<int> numberofcalories = [200, 250, 300, 300, 350, 450, 500, 550];
+  List<int> numberofcalories = [250, 300, 300, 300, 300, 350, 400];
   List<String> recipeImage = [
-    'breakfast_images/Lassi.jpg',
-    'breakfast_images/anda bhurji.jpg',
-    'breakfast_images/shakshuka.jpg',
-    'breakfast_images/aalo pratha.jpg',
-    'breakfast_images/egg pratha.jpg',
-    'breakfast_images/chana pratha.jpg',
-    'breakfast_images/nehari.jpg',
-    'breakfast_images/halwa puri.jpg'
+    'dinner_images/Daal Fry 250.jpg',
+    'dinner_images/palak paneer 300.jpg',
+    'dinner_images/paneer bhurji 300.jpg',
+    'dinner_images/tandoori fish 300.jpg',
+    'dinner_images/Chapli Kabab 300.jpg',
+    'dinner_images/aaloo gosht 350.jpg',
+    'dinner_images/beef biryani 400.jpg',
   ];
 
   List<String> favoriteRecipes = []; // List to store favorite recipes
@@ -121,7 +120,7 @@ class _RecipeCardState extends State<RecipeCard> {
                                         Flexible(
                                           child: IconButton(
                                             onPressed: () {
-addFavouritiese(recipename[index], numberofcalories[index].toString(), recipeImage[index]);
+                                              addFavouritiese(recipename[index], numberofcalories[index].toString(), recipeImage[index]);
                                               setState(() {
                                                 if (favoriteRecipes.contains(recipename[index])) {
                                                   favoriteRecipes.remove(recipename[index]);

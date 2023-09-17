@@ -8,6 +8,10 @@ import 'package:personalrecipeassistant1/signup.dart';
 import 'package:personalrecipeassistant1/testing.dart';
 import 'package:personalrecipeassistant1/favorite.dart';
 import 'package:personalrecipeassistant1/Widgets/categories_widgets.dart';
+import 'package:personalrecipeassistant1/views/camera_view.dart';
+import 'package:personalrecipeassistant1/views/scaningScreen.dart';
+
+import 'ObjectDetcte.dart';
 
 class HomePage extends StatefulWidget {
   final List<String> ?favoriteRecipes;
@@ -18,6 +22,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool colorr=true;
+  bool fcolorr=true;
   int _selectedIndex = 0;
 
   @override
@@ -269,99 +275,75 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-            ],
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            selectedItemColor: Color(0xffe94240),
-            unselectedItemColor: Colors.black54,
-            currentIndex: _selectedIndex,
-            onTap: (index) {
-              setState(() => _selectedIndex = index);
-              if (index == 2) {
-                // Camera button pressed
-                print('Camera button pressed');
-              } else if (index == 4) {
-                // Favorites button pressed
-              }
-            },
-            items: <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Padding(
-                  padding: EdgeInsets.only(left: 30.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      //Navigator.push(context, MaterialPageRoute(builder: (context)=>Favorite()))
-                      // Home button pressed
-                      print('Home button pressed');
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 100,
+
+                child: Card(
+                  color: Colors.transparent,
+
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(Icons.home),
-                        SizedBox(height: 2),
-                        Text(
-                          'Home',
-                          style: TextStyle(
-                            fontSize: 16,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30.0),
+                          child: Column(
+                            children: [
+                              InkWell(
+                                onTap:(){
+                                  print("Pressed Home Icon");
+                                  setState(() {
+                                    colorr=!colorr;
+                                  });
+
+                                },
+                                  child: Icon(Icons.home,color:colorr? Colors.black.withOpacity(0.5):Colors.red,)),
+                              Text('Home',style: TextStyle(fontSize: 16),)
+                            ],
                           ),
                         ),
+                        Container(
+                          width: 70,
+                          height: 70,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xffe94240), // Customize the circular background color as needed
+                          ),
+                          child: IconButton(
+                            icon: Icon(Icons.camera_alt),
+                            color: Colors.white,
+                            iconSize: 30,
+                            onPressed: () {
+                              // Get.to(ImageClassificationScreen());
+                              // Camera button pressed
+                              print('Camera button pressed');
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30.0),
+                          child: Column(
+                            children: [
+                              InkWell(
+                                  onTap:(){
+                                    print('Favorite icon pressed');
+                                    setState(() {
+                                      fcolorr=!fcolorr;
+                                    });
+
+                                  },
+                                  child: Icon(Icons.favorite,color:fcolorr? Colors.black.withOpacity(0.5):Colors.red,)),
+                              Text('Favorite',style: TextStyle(fontSize: 16),)
+                            ],
+                          ),
+                        ),
+
                       ],
                     ),
                   ),
                 ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: SizedBox.shrink(), // Empty space to align home button to the left
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  width: 70,
-                  height: 70,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color(0xffe94240), // Customize the circular background color as needed
-                  ),
-                  child: IconButton(
-                    icon: Icon(Icons.camera_alt),
-                    color: Colors.white,
-                    iconSize: 30,
-                    onPressed: () {
-                      // Camera button pressed
-                      print('Camera button pressed');
-                    },
-                  ),
-                ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: SizedBox.shrink(), // Empty space to align favorite button to the right
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Padding(
-                  padding: EdgeInsets.only(right: 30.0),
-                  child: GestureDetector(
-                    onTap: () {
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.favorite),
-                        SizedBox(height: 2),
-                        Text(
-                          'Favorites',
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                label: '',
               ),
             ],
           ),

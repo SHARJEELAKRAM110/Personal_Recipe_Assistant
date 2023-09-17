@@ -1,4 +1,4 @@
-package com.example.personalrecipeassistant1
+package com.example.personalrecipeassistant
 
 import io.flutter.embedding.android.FlutterActivity
 

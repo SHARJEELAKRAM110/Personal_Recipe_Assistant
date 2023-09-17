@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "522878676397",
-    "project_id": "personal-recipe-assitant",
-    "storage_bucket": "personal-recipe-assitant.appspot.com"
+    "project_number": "1016144192567",
+    "project_id": "personal-recipe-assistan-4f2ed",
+    "storage_bucket": "personal-recipe-assistan-4f2ed.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:522878676397:android:db9805d331a27aaccbc524",
+        "mobilesdk_app_id": "1:1016144192567:android:c0dc9ef99011dc8e724bb2",
         "android_client_info": {
-          "package_name": "com.example.personalrecipeassistant1"
+          "package_name": "com.example.personalrecipeassistant"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "522878676397-ntbui3057h491b3t3jetdj948mp0tv54.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDPiJKxKVgEaLVc2q98VRiAIzv9ioczugU"
+          "current_key": "AIzaSyDDS06pZjjYOTH0iKdte4hEBDmAu-b_LBk"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "522878676397-ntbui3057h491b3t3jetdj948mp0tv54.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

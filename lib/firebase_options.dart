@@ -67,7 +67,7 @@ class DefaultFirebaseOptions {
     projectId: 'personal-recipe-assitant',
     storageBucket: 'personal-recipe-assitant.appspot.com',
     iosClientId: '522878676397-jrho7u368n3njud1gj01vbftdgm6dre0.apps.googleusercontent.com',
-    iosBundleId: 'com.example.personalrecipeassistant1',
+    iosBundleId: 'com.example.personalrecipeassistant',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -77,6 +77,6 @@ class DefaultFirebaseOptions {
     projectId: 'personal-recipe-assitant',
     storageBucket: 'personal-recipe-assitant.appspot.com',
     iosClientId: '522878676397-jrho7u368n3njud1gj01vbftdgm6dre0.apps.googleusercontent.com',
-    iosBundleId: 'com.example.personalrecipeassistant1',
+    iosBundleId: 'com.example.personalrecipeassistant',
   );
 }

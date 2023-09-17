@@ -174,7 +174,7 @@ class _DinnerCardState extends State<DinnerCard> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                 },
                 child: Text('Home'),
               ),
